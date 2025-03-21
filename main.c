@@ -22,7 +22,7 @@ int calculateScalarProduct(int** vectors) {
 }
 
 int* askVectorParams() {
-        static int vector[3];
+        int* vector = (int*)malloc(3 * sizeof(int));
         char coordinateStrings[3] = {'X', 'Y', 'Z'};
 
 	for(int i = 0; i < 3; i++) {
@@ -38,10 +38,8 @@ int** askVectors(int vectorCount) {
 	for(int i = 0; i < vectorCount; i++) {
 		printf("\n V%d\n", i+1);               
                 vectors[i] = askVectorParams(); 
-		printf("\n(%d, %d, %d)\n", vectors[i][0], vectors[i][1], vectors[i][2]);
 	}
 
-	printf("\n(%d, %d, %d)\n", vectors[0][0], vectors[0][1], vectors[0][2]);
         return vectors;
 }
 
