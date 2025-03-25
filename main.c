@@ -49,6 +49,8 @@ void handleScalarMenu() {
         int** vectors = askVectors(2);
 	int result = calculateScalarProduct(vectors);
 	printf("\nResult: %d\n", result);
+	char s[80];
+	scanf("%s", &s);
 }
 
 void handleVectorMenu() {
@@ -56,18 +58,24 @@ void handleVectorMenu() {
 }
 
 void handleMainMenu() { 
-	int choice;
-        system("clear");
-        printf("3D Vector Algebra\n---------------\n(1) Scalar Product\n(2) Vector Product\n");
 
-        choice = readNumInp();
-
-        if(choice == 1) {
-                handleScalarMenu();
-        }
-        else if(choice == 2) {
-                handleVectorMenu();
-        }
+	while(1) {
+		int choice;
+	        system("clear");
+	        printf("3D Vector Algebra\n---------------\n(1) Scalar Product\n(2) Vector Product\n(3) Quit\n");
+	
+	        choice = readNumInp();
+	
+	        if(choice == 1) {
+	                handleScalarMenu();
+	        }
+	        else if(choice == 2) {
+	                handleVectorMenu();
+	        }
+		else if(choice == 3) {
+			exit(0);
+		}
+	}
 }
 
 int main() {
